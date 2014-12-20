@@ -14,7 +14,7 @@ volunteerId <- read.table('./test/subject_test.txt', col.names='volunteerId')
 measure <- read.table('./test/X_test.txt',col.name=features$name)
 activity <- read.table('./test/y_test.txt', col.names='activityId')
 n<-nrow(activity)
-group <-sample('test',n,replace=TRUE)
+group <-sample('test',n,replace=TRUE) #------indicating if it's test or train data
 test <- cbind(volunteerId,activity,group,measure)
 
 ##------read train data
@@ -22,7 +22,7 @@ volunteerId <- read.table('./train/subject_train.txt', col.names='volunteerId')
 measure <- read.table('./train/X_train.txt',col.name=features$name)
 activity <- read.table('./train/y_train.txt', col.names='activityId')
 n<-nrow(activity)
-group <-sample('train',n,replace=TRUE)
+group <-sample('train',n,replace=TRUE) #------indicating if it's test or train data
 train <- cbind(volunteerId,activity,group,measure)
 
 ##------combine test data and train data
@@ -46,7 +46,6 @@ summary <- summarise_each(grouped, funs(mean))
 #summary<-aggregate(cleandata[,3:88], by=list(cleandata$volunteerId,cleandata$activity),FUN=mean)
 
 write.table(summary, file='summary.txt', row.names=FALSE)
-
 
 
 
