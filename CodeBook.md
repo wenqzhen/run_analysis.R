@@ -106,6 +106,3 @@ Additional vectors obtained by averaging the signals in a signal window sample. 
 6. Used write.table to output the resulting tidy table summary.txt
 
 ##You may refer to the summary.txt in the repo for the final data.
-
-
-I added the descriptive activity names column to this data set and labelled the descriptive activity names according to 'activity_labels.txt'. I added the subject column to this data set and calcaluted the average of each variable for each activity and each subject. I stored the means in a new tidy data set. Finally, I wrote this tidy data set to a text file.
