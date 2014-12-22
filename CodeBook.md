@@ -92,9 +92,9 @@ kurtosis(): kurtosis of the frequency domain signal
 
 bandsEnergy(): Energy of a frequency interval within the 64 bins of the FFT of each window. angle(): Angle between to vectors.
 
-#Additional vectors obtained by averaging the signals in a signal window sample. These are used on the angle() variable:
+Additional vectors obtained by averaging the signals in a signal window sample. These are used on the angle() variable: gravityMean tBodyAccMean tBodyAccJerkMean tBodyGyroMean tBodyGyroJerkMean
 
-gravityMean tBodyAccMean tBodyAccJerkMean tBodyGyroMean tBodyGyroJerkMean
+#In the data cleaning process, the data will be aggregated (taking the mean) by VolunteerId(subject) and Activity, resulting a table with 180 rows and 88 columns.
 
 #Transformations in run_analysis.R:
 1. Merged training and testing data sets into one with an added column group to indicate if the record is from the test or train data set.
@@ -103,6 +103,8 @@ gravityMean tBodyAccMean tBodyAccJerkMean tBodyGyroMean tBodyGyroJerkMean
 4. Used grep to extract only the mean and standard deviation columns (86 of them)
 5. Used dplyr package to aggregate the mean values of all the attributes by volunteerId(subject) and activity (an alternative is provided using aggregation function)
 6. Used write.table to output the resulting tidy table summary.txt
+
+*Please refer to the summary.txt in the repo for the final data.
 
 
 I added the descriptive activity names column to this data set and labelled the descriptive activity names according to 'activity_labels.txt'. I added the subject column to this data set and calcaluted the average of each variable for each activity and each subject. I stored the means in a new tidy data set. Finally, I wrote this tidy data set to a text file.
